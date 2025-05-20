@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3D-Pose</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <link rel="icon" href="files/box.png" type="image">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <header class="header area">
+
+        <ul class="bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <section>
+            <h2>COT-AD: COTTON ANALYSIS DATASET</h2>
+            <img src="images/reals.jpg" style="width: 100%; margin-top: 10px;"/>
+            <p style="text-align: justify; margin-top: 20px;">
+                
+            </p>
+        </section>
+        <h1> </h1>
+        <h3>Akbar Ali<sup>1</sup>, Mahek Vyas<sup>2</sup>, Soumyaratna Debnath<sup>1</sup>, Chanda Grover Kamra<sup>3</sup>,Jaidev Sanjay Khalane<sup>1</sup>,Reuben Shibu Devanesan<sup>1</sup>,Indra Deep Mastan<sup>4</sup>,Subramanian Sankaranarayanan<sup>1</sup>,Pankaj Khanna<sup>1</sup>,Shanmuganathan Raman<sup>1</sup></h3>
+        <h3 style="margin-top: 20px;"><a href="https://2025.ieeeicip.org/" class="sigAnchor">ICIP 2025</a></h3>
+        <h5 style="margin-top: 20px;"><sup>1 </sup>Indian Institute Of Technology Gandhinagar, India, &nbsp;&nbsp;&nbsp;&nbsp;<sup>2 </sup> Larsen & Toubro Technology Services Limited, India,&nbsp;&nbsp;&nbsp;&nbsp;<sup>3 </sup> Ashoka University - Sonipat,India,&nbsp;&nbsp;&nbsp;&nbsp; <sup>4 </sup>Indian Institute of Technology (BHU) Varanasi, India.</h5>
+    </header>
+
+    <main class="content">
+        <div style="justify-content: center; display: flex; margin-bottom: 20px;">
+            <a class="btn btn-dark" href="https://arxiv.org/abs/2501.01174"><img src="files/description.svg"/> Paper</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-dark" href="https://arxiv.org/abs/2501.01174"><img src="files/description.svg"/> Supplementary</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-dark" href="https://www.kaggle.com/datasets/aamaanakbar/cot-ad1"><img src="files/database.svg"/> COT-AD Dataset</a>
+        </div>
+        <section>
+            <h2>Abstract</h2>
+            <p class="abstract">
+                This paper presents COT-AD, a comprehensive Dataset designed to enhance cotton crop analysis through computer vision. Comprising over 25,000 images captured throughout the cotton growth cycle, with 5,000 annotated images, COT-AD includes aerial imagery for field-scale detection and segmentation and high-resolution DSLR images documenting key diseases. The annotations cover pest and disease recognition, vegetation, and weed analysis, addressing a critical gap in cotton-specific agricultural datasets. COT-AD supports tasks such as classification, segmentation, image restoration, enhancement, deep generative model-based cotton crop synthesis and early disease management, advancing data-driven crop management.  
+            </p>
+        </section>
+
+
+
+
+
+        <section>
+            <h2>Field Views and Data Examples</h2>
+            <figure>
+                <img src="images/Untitled_fig1.png" alt="Field and Drone Captured Images" style="width: 100%;"/>
+                <figcaption>
+                    <strong>(a)</strong> showcases the field view of Site 1; <strong>(b)</strong> and <strong>(c)</strong> are examples of drone-captured images; <strong>(d)</strong> showcases the field view of Site 2; and Parts <strong>(e)</strong>, <strong>(f)</strong>, and <strong>(g)</strong> are examples of DSLR images.
+                </figcaption>
+            </figure>
+        </section>
+
+
+
+        <section>
+            <h2>Results : Image enhancement and Sementic segmentation</h2>
+            <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="tabResult activeResult" data-image="ResultImg1" style="font-size: 20px">Image enhancement</div>
+                <div class="tabResult" data-image="ResultImg2" style="font-size: 20px">Sementic segmentation</div>
+            </div>
+            <div class="row">
+                <div class="col-md-0"></div>
+                <div class="col-md-12">
+                    <img id="ResultImg1" class="imgResult" src="images/enhance.png" alt="Internal Error" >
+                    <img id="ResultImg2" class="hiddenResult imgResult" src="images/sementic.png" alt="Internal Error">
+                </div>
+                <div class="col-md-0"></div>
+            </div>
+        </section>
+            
+        <section>
+            <h2>About COT-AD Dataset</h2>
+            <p>The COT-AD dataset is designed to support research in agricultural technology, particularly focusing on cotton crop monitoring, disease detection, Computer Vision, Image Processing, and precision farming. It is divided into two main sections: <strong>Annotated Data</strong> and <strong>Unannotated Data</strong>, each serving different purposes in crop analysis and model development.</p>
+        </section>
+    
+        <section>
+            <h2>Annotated Data</h2>
+            <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="tabResult activeResult" data-text="AnnotatedText1" style="font-size: 20px">Aerial Images for Detection and Segmentation</div>
+                <div class="tabResult" data-text="AnnotatedText2" style="font-size: 20px">High-Resolution DSLR Images for Cotton Crop Insights</div>
+            </div>
+            <div class="row">
+                <div class="col-md-0"></div>
+                <div class="col-md-12">
+                    <div id="AnnotatedText1" class="textResult">
+                        <h3>Aerial Images for Detection and Segmentation</h3>
+                        <p>This section includes images collected over six months and is divided into four parts:</p>
+                        <ul>
+                            <li><strong>Part A:</strong> First two months</li>
+                            <li><strong>Part B:</strong> Third month</li>
+                            <li><strong>Part C:</strong> Fourth month</li>
+                            <li><strong>Part D:</strong> Fifth and sixth months</li>
+                        </ul>
+                        <p>Each part is further organized into four subfolders:</p>
+                        <ul>
+                            <li><strong>Images:</strong> Aerial JPG images of cotton crops.</li>
+                            <li><strong>Detection Labels:</strong> YOLO-formatted .txt files for single-class detection tasks.</li>
+                            <li><strong>Segmentation Masks:</strong> Binary JPG masks for detailed crop segmentation.</li>
+                            <li><strong>Segmentation Labels:</strong> YOLO-formatted .txt files for segmentation tasks.</li>
+                        </ul>
+                    </div>
+                    <div id="AnnotatedText2" class="hiddenResult textResult">
+                        <h3>High-Resolution DSLR Images for Cotton Crop Insights</h3>
+                        <p>This section is divided into three subcategories, each focusing on different aspects of cotton crop health:</p>
+                        <ul>
+                            <li><strong>Leaf Disease:</strong>
+                                <ul>
+                                    <li>Yellowish Leaf</li>
+                                    <li>Leaf Spot Bacterial Blight</li>
+                                    <li>Leaf Reddening</li>
+                                    <li>Fresh Leaf</li>
+                                </ul>
+                            </li>
+                            <li><strong>Cotton Boll:</strong>
+                                <ul>
+                                    <li>Boll Rot</li>
+                                    <li>Damaged Cotton Boll</li>
+                                    <li>Healthy Cotton Boll</li>
+                                </ul>
+                            </li>
+                            <li><strong>Bugs:</strong>
+                                <ul>
+                                    <li>Mealy Bug</li>
+                                    <li>Red Cotton Bug</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-0"></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Unannotated Data</h2>
+            <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+                <div class="tabResult activeResult" data-text="UnannotatedText1" style="font-size: 20px">DSLR Data (Week-wise)</div>
+                <div class="tabResult" data-text="UnannotatedText2" style="font-size: 20px">Farm_2 (Biweekly Image Acquisition)</div>
+                <div class="tabResult" data-text="UnannotatedText3" style="font-size: 20px">Farm_1 (Weekly Image Acquisition)</div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-0"></div>
+                <div class="col-md-12">
+                    <div id="UnannotatedText1" class="textResult">
+                        <h3>DSLR Data (Week-wise)</h3>
+                        <p>This section contains high-resolution close-up images of cotton crops, capturing detailed views of leaves, bolls, and bugs. The dataset also includes videos that allow for temporal analysis of crop growth and behavior. These images are essential for tasks such as disease detection, pest monitoring, and growth stage identification.</p>
+                    </div>
+
+                    <div id="UnannotatedText2" class="hiddenResult textResult">
+                        <h3>Farm_2 (Biweekly Image Acquisition)</h3>
+                        <p>Farm_2 includes drone images captured biweekly at three altitudes (10m, 15m, and 115m). The varying altitudes offer different levels of detail:</p>
+                        <ul>
+                            <li><strong>10m and 15m:</strong> Provide detailed views of the crop.</li>
+                            <li><strong>115m:</strong> Offers an overview of the entire field.</li>
+                        </ul>
+                        <p>This biweekly acquisition ensures that data captures the crop at different growth stages, making it ideal for research on plant development, disease detection, and environmental monitoring.</p>
+                    </div>
+
+                    <div id="UnannotatedText3" class="hiddenResult textResult">
+                        <h3>Farm_1 (Weekly Image Acquisition)</h3>
+                        <p>Farm_1 includes drone images captured weekly at altitudes of 10m, 15m, and 115m. This consistent, weekly acquisition enables detailed tracking of crop growth, health changes, and environmental impacts over time. This data is valuable for time-series analysis, anomaly detection, and predictive modeling.</p>
+                    </div>
+                </div>
+                <div class="col-md-0"></div>
+            </div>
+        </section>
+
+
+        
+        <script>
+            // Get all the tab elements
+            const tabs = document.querySelectorAll('.tabResult');
+            
+            // Add event listener to each tab
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    // Deactivate all tabs
+                    tabs.forEach(t => t.classList.remove('activeResult'));
+                    // Hide all text results
+                    const results = document.querySelectorAll('.textResult');
+                    results.forEach(result => result.classList.add('hiddenResult'));
+                    
+                    // Activate clicked tab
+                    this.classList.add('activeResult');
+                    
+                    // Show the corresponding text result
+                    const target = document.getElementById(this.getAttribute('data-text'));
+                    target.classList.remove('hiddenResult');
+                });
+            });
+        </script>
+
+    
+
+    
+        <section>
+            <h2>Explore the Dataset</h2>
+            <p>Explore the dataset and contribute to the future of agricultural technology!</p>
+        </section>
+        </section>
+<section style="margin-bottom: 0px;">
+<h2>Citations</h2>
+<div style="padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px;">
+<pre style="font-family: monospace, sans-serif; font-size: 14px; line-height: 1.5; color: #555; margin-bottom: 0px;">@article{debnath2025l3d,
+    title={COT-AD: COTTON ANALYSIS DATASET},
+    author={Akbar, Debnath, and Raman, Shanmuganathan},
+    journal={arXiv preprint arXiv:},
+    year={2025}
+}</pre></div>
+<div style="padding: 15px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 5px; margin-top: 10px;">
+<pre style="font-family: monospace, sans-serif; font-size: 14px; line-height: 1.5; color: #555; margin-bottom: 0px;">@misc{soumyaratna_debnath_harish_katti_shashikant_verma_shanmuganathan_raman_2024,
+	title={L3D-Pose Dataset},
+	url={https://www.kaggle.com/datasets/aamaanakbar/cot-ad1},
+	DOI={},
+	publisher={Kaggle},
+	author={Akbar Ali,Soumyaratna Debnath and Shanmuganathan Raman},
+	year={2024}
+}</pre></div>
+</section>
+
+    </main>
+
+    <footer class="footer">
+        &copy; 2025 Akbar Ali, CVIG Lab, Indian Institute of Technology Gandhinagar
+    </footer>
+
+    <script>
+        // Results Process Navigation
+        const tabsResult = document.querySelectorAll('.tabResult');
+        const imagesResult = document.querySelectorAll('.imgResult');
+      
+        tabsResult.forEach(tab => {
+          tab.addEventListener('click', () => {
+            tabsResult.forEach(t => t.classList.remove('activeResult'));
+            imagesResult.forEach(img => img.classList.add('hiddenResult'));
+      
+            tab.classList.add('activeResult');
+      
+            const imageId = tab.getAttribute('data-image');
+            document.getElementById(imageId).classList.remove('hiddenResult');
+          });
+        });
+
+         // === Macaque Dataset Functions ===
+        function mac_getUniqueRandomNumbers(count, min, max) {
+        const numbers = new Set();
+        while (numbers.size < count) {
+            const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+            numbers.add(randomNum);
+        }
+        return Array.from(numbers);
+        }
+
+        function mac_padNumber(num, size) {
+        let s = "000000" + num;
+        return s.substr(s.length - size);
+        }
+
+        function mac_loadImages(action) {
+        const container = document.getElementById('mac_image-container');
+        container.innerHTML = ''; // Clear previous images
+
+        const grid = document.createElement('div');
+        grid.className = 'mac_grid-container';
+
+        // Using 1 to 499 for Macaque as per your code
+        const imageNumbers = mac_getUniqueRandomNumbers(15, 0, 499);
+
+        imageNumbers.forEach(num => {
+            const img = document.createElement('img');
+            const formattedNum = mac_padNumber(num, 6);
+            img.src = `Macaque/${action}/${formattedNum}.jpg`;
+            img.alt = `${action} image ${formattedNum}`;
+            grid.appendChild(img);
+        });
+
+        container.appendChild(grid);
+        }
+
+        function mac_setActiveAction(item) {
+        document.querySelectorAll('.mac_action-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        const action = item.getAttribute('data-action');
+        mac_loadImages(action);
+        }
+
+        document.querySelectorAll('.mac_action-item').forEach(item => {
+        item.addEventListener('click', () => {
+            mac_setActiveAction(item);
+        });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+        const firstMacItem = document.querySelector('.mac_action-item');
+        if (firstMacItem) {
+            mac_setActiveAction(firstMacItem);
+        }
+        });
+
+
+        // === Horse Dataset Functions ===
+        function hor_getUniqueRandomNumbers(count, min, max) {
+        const numbers = new Set();
+        while (numbers.size < count) {
+            const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+            numbers.add(randomNum);
+        }
+        return Array.from(numbers);
+        }
+
+        function hor_padNumber(num, size) {
+        let s = "000000" + num;
+        return s.substr(s.length - size);
+        }
+
+        function hor_loadImages(action) {
+        const container = document.getElementById('hor_image-container');
+        container.innerHTML = ''; // Clear previous images
+
+        const grid = document.createElement('div');
+        grid.className = 'hor_grid-container';
+
+        // Assuming there are 500 images for Horse
+        const imageNumbers = hor_getUniqueRandomNumbers(15, 0, 499);
+
+        imageNumbers.forEach(num => {
+            const img = document.createElement('img');
+            const formattedNum = hor_padNumber(num, 6);
+            img.src = `Horse/${action}/${formattedNum}.jpg`;
+            img.alt = `${action} image ${formattedNum}`;
+            grid.appendChild(img);
+        });
+
+        container.appendChild(grid);
+        }
+
+        function hor_setActiveAction(item) {
+        document.querySelectorAll('.hor_action-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        const action = item.getAttribute('data-action');
+        hor_loadImages(action);
+        }
+
+        document.querySelectorAll('.hor_action-item').forEach(item => {
+        item.addEventListener('click', () => {
+            hor_setActiveAction(item);
+        });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+        const firstHorItem = document.querySelector('.hor_action-item');
+        if (firstHorItem) {
+            hor_setActiveAction(firstHorItem);
+        }
+        });
+    </script>
+
+</body>
+</html>
